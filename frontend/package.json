@@ -1,0 +1,19 @@
+{
+  "name": "workforce-transformer-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Workforce Transformer Universal",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server -p 3000",
+    "dev": "http-server -p 3000 -o"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "chart.js": "^3.9.1",
+    "bootstrap": "^5.2.3",
+    "@popperjs/core": "^2.11.6"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0"
+  }
+}

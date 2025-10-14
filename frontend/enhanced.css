@@ -1,0 +1,132 @@
+/* style_enhanced_vibrant.css
+   Enhanced Vibrant Interactive Theme
+   - Animated gradient background
+   - Lively card hover + tilt + entrance animations
+   - Interactive AI score counter, tooltips, modal, progress animations
+   - Load AFTER main style.css so it overrides where needed
+*/
+
+:root{
+    --accent-1: #2FB6C6;
+    --accent-2: #9face6;
+    --bg-start: #74ebd5;
+    --bg-end: #9face6;
+    --card-bg: rgba(255,255,255,0.95);
+    --text-strong: #111;
+    --muted: rgba(17,17,17,0.65);
+    --glass: rgba(255,255,255,0.6);
+    --radius-lg: 16px;
+    --shadow-lg: 0 12px 40px rgba(15, 23, 42, 0.12);
+  }
+  
+  /* Animated gradient background */
+  html, body {
+    min-height: 100%;
+    background: linear-gradient(120deg, var(--bg-start), var(--bg-end));
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    color: var(--text-strong);
+    font-family: Inter, "FKGroteskNeue", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  @keyframes gradientShift {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+  
+  /* Container */
+  .container { max-width:1200px; margin:0 auto; padding:32px; }
+  
+  /* Entrance animation */
+  .fade-up { animation: fadeUp .7s cubic-bezier(.16,1,.3,1) both; }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(18px);} to {opacity:1; transform:none;} }
+  
+  /* Card polish */
+  .card, .role-item {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, filter .35s ease;
+    border: 1px solid rgba(0,0,0,0.04);
+    overflow: hidden;
+  }
+  
+  .card:hover, .role-item:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 20px 60px rgba(15,23,42,0.18);
+    filter: saturate(1.03);
+  }
+  
+  /* Add tilt class for subtle 3D tilt (JS will add/remove) */
+  .role-item.tilt { will-change: transform; transform-style: preserve-3d; perspective: 1000px; }
+  
+  /* Predicted roles */
+  .predicted-roles { display:flex; flex-direction:column; gap:14px; }
+  .role-item { display:flex; align-items:center; justify-content:space-between; padding:18px; }
+  .role-name { font-weight:700; color:var(--text-strong); font-size:1rem; }
+  .role-meta { color: var(--muted); font-size:0.95rem; display:flex; gap:12px; align-items:center; }
+  
+  /* Score badge */
+  .score-badge {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    color: white; font-weight:800; padding:8px 12px; border-radius:999px;
+    box-shadow: 0 6px 20px rgba(47,182,198,0.18);
+    transform-origin:center;
+    animation: badgePop .9s ease both;
+  }
+  @keyframes badgePop { 0%{transform:scale(.6)} 60%{transform:scale(1.06)} 100%{transform:none} }
+  
+  /* AI Score circular hint (if used) */
+  .ai-score { width:120px; height:120px; border-radius:999px; display:flex; align-items:center; justify-content:center;
+    background: conic-gradient(var(--accent-1) 0deg, var(--accent-2) 120deg, rgba(0,0,0,0.08) 180deg);
+    color:white; font-weight:800; box-shadow: 0 12px 30px rgba(47,182,198,0.12);
+  }
+  
+  /* Buttons */
+  .btn--primary {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2)) !important;
+    color: white !important; border-radius:12px !important; padding:12px 18px !important; border:none; cursor:pointer;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .btn--primary:active { transform: translateY(2px) scale(.995); }
+  .btn--primary:focus { outline: 3px solid rgba(47,182,198,0.18); }
+  
+  /* Tooltip */
+  .tooltip { position:relative; display:inline-block; }
+  .tooltip .tooltiptext {
+    visibility:hidden; opacity:0; transition: opacity .18s ease, transform .18s ease;
+    position:absolute; bottom:calc(100% + 8px); left:50%; transform:translateX(-50%) translateY(6px);
+    background:rgba(17,17,17,0.95); color:white; padding:8px 10px; border-radius:8px; font-size:13px;
+    white-space:nowrap; z-index:30;
+  }
+  .tooltip:hover .tooltiptext, .tooltip:focus .tooltiptext { visibility:visible; opacity:1; transform:translateX(-50%) translateY(0); }
+  
+  /* Modal */
+  .modal-backdrop { position:fixed; inset:0; background:rgba(2,6,23,0.6); display:flex; align-items:center; justify-content:center; z-index:1000; }
+  .modal { background:white; color:var(--text-strong); padding:24px; border-radius:12px; width:94%; max-width:640px; box-shadow: 0 20px 60px rgba(2,6,23,0.3); }
+  
+  /* Progress bar animation */
+  .progress-bar { height:12px; background:rgba(0,0,0,0.06); border-radius:999px; overflow:hidden; }
+  .progress-bar > i { display:block; height:100%; width:0%; border-radius:999px; background:linear-gradient(90deg,var(--accent-1),var(--accent-2)); transition: width 1.2s cubic-bezier(.2,1,.3,1); }
+  
+  /* Stat styles */
+  .stat-number { color:var(--accent-1); font-weight:800; font-size:1.6rem; }
+  .stat-label { color:var(--muted); font-size:0.9rem; }
+  
+  /* Responsive */
+  @media (max-width:900px) {
+    .predicted-roles { gap:10px; }
+    .ai-score { width:90px; height:90px; }
+  }
+  
+  /* Accessibility */
+  :focus { outline: 3px solid rgba(47,182,198,0.16); outline-offset:3px; }
+  
+  /* Force readability for previously problematic areas */
+  .predicted-roles, .predicted-roles *, .assessment-results, .assessment-results *, .role-item, .role-item * {
+    color: var(--text-strong) !important;
+  }
+  

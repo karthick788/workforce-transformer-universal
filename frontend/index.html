@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkforceTransformer Universal - AI-Powered Cross-Industry Workforce Transformation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="improved.css">
+    <link rel="stylesheet" href="enhanced.css">
+    <style>
+        /* Force override for AI assessment results */
+        .results-header {
+            background: #f8fafc !important;
+            color: #111827 !important;
+            border: 1px solid #e2e8f0 !important;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .score-circle {
+            background: #f0f4ff !important;
+            border: 2px solid #dbeafe !important;
+        }
+
+        .score-number {
+            color: #1e40af !important;
+            font-weight: 600 !important;
+        }
+
+        .score-label {
+            color: #4b5563 !important;
+            font-weight: 500 !important;
+        }
+
+        .compatibility-badge {
+            background: #e0e7ff !important;
+            color: #1e40af !important;
+            border: 1px solid #bfdbfe !important;
+        }
+
+        .role-card {
+            border-left: 4px solid #3b82f6 !important;
+            background: #ffffff !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .role-card .role-title {
+            color: #111827 !important;
+        }
+
+        .role-card .role-details {
+            color: #4b5563 !important;
+        }
+
+        .global-stats .stat-label {
+            color: #111 !important;
+        }
+
+        .industry-card h3 {
+            color: #fff !important;
+        }
+
+        .chart-container h3 {
+            color: #fff !important;
+        }
+
+        .assessment-form h3 {
+            color: #fff !important;
+        }
+
+        .impact-card h3 {
+            color: #fff !important;
+        }
+
+        .story-quote {
+            color: #fff !important;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🌍 WorkforceTransformer Universal</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#industries" class="nav-link">Industries</a>
+                <a href="#assessment" class="nav-link">Assessment</a>
+                <a href="#training" class="nav-link">Training</a>
+                <a href="#analytics" class="nav-link">Analytics</a>
+                <a href="#impact" class="nav-link">Impact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">WorkforceTransformer Universal</h1>
+                <p class="hero-tagline">AI-Powered Cross-Industry Workforce Transformation</p>
+                <p class="hero-description">
+                    Revolutionizing employment across 8 major industries through intelligent automation,
+                    personalized training, and AI-driven workforce development
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn--primary btn--lg" onclick="scrollToSection('assessment')">Start Universal
+                        Assessment</button>
+                    <button class="btn btn--outline btn--lg" onclick="scrollToSection('industries')">Explore
+                        Industries</button>
+                </div>
+                <div class="global-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="74.7">0</div>
+                        <div class="stat-label">Million Workforce Affected</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="28.1">0</div>
+                        <div class="stat-label">Million Jobs at Risk</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="24.4">0</div>
+                        <div class="stat-label">Million New Jobs Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="3092">0</div>
+                        <div class="stat-label">Average ROI %</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Overview -->
+    <section id="industries" class="industries-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Cross-Industry Transformation Hub</h2>
+                <p>Explore how AI automation is revolutionizing workforce development across all major industries</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-card" data-industry="cybersecurity" onclick="selectIndustry('cybersecurity')">
+                    <div class="industry-icon">🛡️</div>
+                    <h3>Cybersecurity</h3>
+                    <div class="industry-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Workforce:</span>
+                            <span class="stat-value">3.5M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Net Change:</span>
+                            <span class="stat-value positive">+525K</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">ROI:</span>
+                            <span class="stat-value">2,775%</span>
+                        </div>
+                    </div>
+                    <div class="industry-maturity">
+                        <span class="maturity-label">Automation Maturity:</span>
+                        <div class="maturity-bar">
+                            <div class="maturity-fill" data-width="75"></div>
+                        </div>
+                        <span class="maturity-percent">75%</span>
+                    </div>
+                </div>
+
+                <div class="industry-card" data-industry="healthcare" onclick="selectIndustry('healthcare')">
+                    <div class="industry-icon">🏥</div>
+                    <h3>Healthcare</h3>
+                    <div class="industry-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Workforce:</span>
+                            <span class="stat-value">18.0M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Net Change:</span>
+                            <span class="stat-value positive">+1.8M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">ROI:</span>
+                            <span class="stat-value">3,525%</span>
+                        </div>
+                    </div>
+                    <div class="industry-maturity">
+                        <span class="maturity-label">Automation Maturity:</span>
+                        <div class="maturity-bar">
+                            <div class="maturity-fill" data-width="60"></div>
+                        </div>
+                        <span class="maturity-percent">60%</span>
+                    </div>
+                </div>
+
+                <div class="industry-card" data-industry="manufacturing" onclick="selectIndustry('manufacturing')">
+                    <div class="industry-icon">🏭</div>
+                    <h3>Manufacturing</h3>
+                    <div class="industry-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Workforce:</span>
+                            <span class="stat-value">12.8M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Net Change:</span>
+                            <span class="stat-value negative">-1.28M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">ROI:</span>
+                            <span class="stat-value">3,033%</span>
+                        </div>
+                    </div>
+                    <div class="industry-maturity">
+                        <span class="maturity-label">Automation Maturity:</span>
+                        <div class="maturity-bar">
+                            <div class="maturity-fill" data-width="80"></div>
+                        </div>
+                        <span class="maturity-percent">80%</span>
+                    </div>
+                </div>
+
+                <div class="industry-card" data-industry="finance" onclick="selectIndustry('finance')">
+                    <div class="industry-icon">💰</div>
+                    <h3>Finance</h3>
+                    <div class="industry-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Workforce:</span>
+                            <span class="stat-value">9.2M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Net Change:</span>
+                            <span class="stat-value negative">-920K</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">ROI:</span>
+                            <span class="stat-value">3,720%</span>
+                        </div>
+                    </div>
+                    <div class="industry-maturity">
+                        <span class="maturity-label">Automation Maturity:</span>
+                        <div class="maturity-bar">
+                            <div class="maturity-fill" data-width="85"></div>
+                        </div>
+                        <span class="maturity-percent">85%</span>
+                    </div>
+                </div>
+
+                <div class="industry-card" data-industry="retail" onclick="selectIndustry('retail')">
+                    <div class="industry-icon">🛒</div>
+                    <h3>Retail</h3>
+                    <div class="industry-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Workforce:</span>
+                            <span class="stat-value">15.6M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Net Change:</span>
+                            <span class="stat-value negative">-3.9M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">ROI:</span>
+                            <span class="stat-value">2,750%</span>
+                        </div>
+                    </div>
+                    <div class="industry-maturity">
+                        <span class="maturity-label">Automation Maturity:</span>
+                        <div class="maturity-bar">
+                            <div class="maturity-fill" data-width="70"></div>
+                        </div>
+                        <span class="maturity-percent">70%</span>
+                    </div>
+                </div>
+
+                <div class="industry-card" data-industry="education" onclick="selectIndustry('education')">
+                    <div class="industry-icon">🎓</div>
+                    <h3>Education</h3>
+                    <div class="industry-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Workforce:</span>
+                            <span class="stat-value">8.4M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Net Change:</span>
+                            <span class="stat-value positive">+1.68M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">ROI:</span>
+                            <span class="stat-value">2,586%</span>
+                        </div>
+                    </div>
+                    <div class="industry-maturity">
+                        <span class="maturity-label">Automation Maturity:</span>
+                        <div class="maturity-bar">
+                            <div class="maturity-fill" data-width="45"></div>
+                        </div>
+                        <span class="maturity-percent">45%</span>
+                    </div>
+                </div>
+
+                <div class="industry-card" data-industry="logistics" onclick="selectIndustry('logistics')">
+                    <div class="industry-icon">📦</div>
+                    <h3>Logistics</h3>
+                    <div class="industry-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Workforce:</span>
+                            <span class="stat-value">5.8M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Net Change:</span>
+                            <span class="stat-value negative">-1.45M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">ROI:</span>
+                            <span class="stat-value">2,620%</span>
+                        </div>
+                    </div>
+                    <div class="industry-maturity">
+                        <span class="maturity-label">Automation Maturity:</span>
+                        <div class="maturity-bar">
+                            <div class="maturity-fill" data-width="75"></div>
+                        </div>
+                        <span class="maturity-percent">75%</span>
+                    </div>
+                </div>
+
+                <div class="industry-card" data-industry="legal" onclick="selectIndustry('legal')">
+                    <div class="industry-icon">⚖️</div>
+                    <h3>Legal</h3>
+                    <div class="industry-stats">
+                        <div class="stat-row">
+                            <span class="stat-label">Workforce:</span>
+                            <span class="stat-value">1.4M</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Net Change:</span>
+                            <span class="stat-value negative">-140K</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">ROI:</span>
+                            <span class="stat-value">3,733%</span>
+                        </div>
+                    </div>
+                    <div class="industry-maturity">
+                        <span class="maturity-label">Automation Maturity:</span>
+                        <div class="maturity-bar">
+                            <div class="maturity-fill" data-width="55"></div>
+                        </div>
+                        <span class="maturity-percent">55%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <h3>Cross-Industry Job Impact Analysis</h3>
+                <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/326f4547ed8a654771a2bc49fb2763ff/06fd73c3-3780-44ff-8559-8fd2aad787d9/93af7d6a.png"
+                    alt="Cross-Industry Net Job Impact Chart" class="chart-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Universal Skills Assessment -->
+    <section id="assessment" class="assessment-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Universal Skills Assessment Engine</h2>
+                <p>AI-powered cross-industry skills evaluation and career transition planning</p>
+            </div>
+
+            <div class="assessment-container">
+                <div class="assessment-form">
+                    <h3>Cross-Domain Skills Analysis</h3>
+                    <form id="universalSkillsForm">
+                        <div class="form-group">
+                            <label class="form-label">Current Industry</label>
+                            <select class="form-control" id="currentIndustry">
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="finance">Finance</option>
+                                <option value="retail">Retail</option>
+                                <option value="education">Education</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="legal">Legal</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Target Industry (Optional)</label>
+                            <select class="form-control" id="targetIndustry">
+                                <option value="">Select target industry</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="manufacturing">Manufacturing</option>
+                                <option value="finance">Finance</option>
+                                <option value="retail">Retail</option>
+                                <option value="education">Education</option>
+                                <option value="logistics">Logistics</option>
+                                <option value="legal">Legal</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Years of Experience</label>
+                            <select class="form-control" id="experience">
+                                <option value="0-2">0-2 years</option>
+                                <option value="3-5">3-5 years</option>
+                                <option value="6-10">6-10 years</option>
+                                <option value="10+">10+ years</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Cross-Sector Skills (Select all that apply)</label>
+                            <div class="skills-grid">
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="data-analysis"> Data Analysis
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="ai-ml"> AI/ML Fundamentals
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="digital-literacy"> Digital Literacy
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="process-automation"> Process Automation
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="human-ai-collaboration"> Human-AI Collaboration
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="critical-thinking"> Critical Thinking
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="adaptability"> Adaptability
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="communication"> Cross-functional Communication
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="project-management"> Project Management
+                                </label>
+                                <label class="skill-checkbox">
+                                    <input type="checkbox" value="ethical-decision"> Ethical Decision Making
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary btn--full-width">Analyze Cross-Industry
+                            Skills</button>
+                    </form>
+                </div>
+
+                <div class="assessment-results" id="universalAssessmentResults">
+                    <h3>AI Assessment Results</h3>
+                    <div class="results-content">
+                        <div class="skill-score">
+                            <div class="score-circle">
+                                <span class="score-number" id="universalOverallScore">--</span>
+                                <span class="score-label">Universal Score</span>
+                            </div>
+                        </div>
+                        <div class="transition-opportunities" id="transitionOpportunities">
+                            <h4>🌟 Career Transition Opportunities</h4>
+                            <p>Complete the assessment to see your cross-industry career pathways</p>
+                        </div>
+                        <div class="recommendations" id="universalRecommendations">
+                            <h4>🤖 AI-Powered Recommendations</h4>
+                            <p>Complete the assessment to see your personalized recommendations</p>
+                        </div>
+                        <div class="learning-path" id="universalLearningPath">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Domain Training Hub -->
+    <section id="training" class="training-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Multi-Domain Training Hub</h2>
+                <p>AI-personalized learning pathways across all industries</p>
+            </div>
+
+            <div class="training-dashboard">
+                <div class="training-overview">
+                    <div class="training-card">
+                        <h3>Universal Training Modules</h3>
+                        <div class="module-list">
+                            <div class="module-item" onclick="launchTraining('ai-fundamentals')">
+                                <div class="module-icon">🤖</div>
+                                <div class="module-info">
+                                    <h4>AI Fundamentals Bootcamp</h4>
+                                    <p>4 weeks | All Industries | Universal AI Literacy</p>
+                                </div>
+                                <button class="btn btn--sm btn--primary">Start</button>
+                            </div>
+                            <div class="module-item" onclick="launchTraining('cross-sector-data')">
+                                <div class="module-icon">📊</div>
+                                <div class="module-info">
+                                    <h4>Cross-Sector Data Science</h4>
+                                    <p>8 weeks | All Industries | Multi-Domain Analytics</p>
+                                </div>
+                                <button class="btn btn--sm btn--primary">Start</button>
+                            </div>
+                            <div class="module-item" onclick="launchTraining('industry-transition')">
+                                <div class="module-icon">🔄</div>
+                                <div class="module-info">
+                                    <h4>Industry Transition Bridge</h4>
+                                    <p>6 weeks | All Industries | Career Mobility Specialist</p>
+                                </div>
+                                <button class="btn btn--sm btn--primary">Start</button>
+                            </div>
+                            <div class="module-item" onclick="launchTraining('automation-leadership')">
+                                <div class="module-icon">⚡</div>
+                                <div class="module-info">
+                                    <h4>Automation Leadership</h4>
+                                    <p>10 weeks | Manufacturing, Logistics, Finance | Automation Management</p>
+                                </div>
+                                <button class="btn btn--sm btn--primary">Start</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="training-card">
+                        <h3>Emerging Roles Training</h3>
+                        <div class="emerging-roles-list">
+                            <div class="role-item">
+                                <span class="role-name">AI Ethics Specialist</span>
+                                <span class="role-demand">High Demand</span>
+                            </div>
+                            <div class="role-item">
+                                <span class="role-name">Human-Machine Interface Designer</span>
+                                <span class="role-demand">Growing</span>
+                            </div>
+                            <div class="role-item">
+                                <span class="role-name">Automation Implementation Manager</span>
+                                <span class="role-demand">Critical</span>
+                            </div>
+                            <div class="role-item">
+                                <span class="role-name">Cross-Industry Data Analyst</span>
+                                <span class="role-demand">High Demand</span>
+                            </div>
+                            <div class="role-item">
+                                <span class="role-name">Digital Transformation Consultant</span>
+                                <span class="role-demand">Growing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="progress-tracking">
+                    <h3>Cross-Industry Progress Tracking</h3>
+                    <div class="progress-chart-container" style="position: relative; height: 300px;">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Market Analytics -->
+    <section id="analytics" class="analytics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Intelligent Job Market Analytics</h2>
+                <p>Cross-industry insights and ROI projections</p>
+            </div>
+
+            <div class="analytics-content">
+                <div class="chart-container">
+                    <h3>ROI Analysis Across Industries</h3>
+                    <img src="https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/326f4547ed8a654771a2bc49fb2763ff/f5fa74f9-4e37-4d3e-affa-6e26b1ea08fc/a866ca1e.png"
+                        alt="ROI Analysis Chart" class="chart-image">
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Cross-Industry Salary Increases</h3>
+                        <div class="salary-comparison">
+                            <div class="salary-item">
+                                <span class="industry">Legal</span>
+                                <span class="salary-increase">+$22,000</span>
+                            </div>
+                            <div class="salary-item">
+                                <span class="industry">Cybersecurity</span>
+                                <span class="salary-increase">+$17,200</span>
+                            </div>
+                            <div class="salary-item">
+                                <span class="industry">Finance</span>
+                                <span class="salary-increase">+$15,000</span>
+                            </div>
+                            <div class="salary-item">
+                                <span class="industry">Healthcare</span>
+                                <span class="salary-increase">+$12,000</span>
+                            </div>
+                            <div class="salary-item">
+                                <span class="industry">Education</span>
+                                <span class="salary-increase">+$9,800</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <h3>Training Time with AI</h3>
+                        <div class="training-time-comparison">
+                            <div class="time-item">
+                                <span class="industry">Retail</span>
+                                <span class="time-weeks">3 weeks</span>
+                            </div>
+                            <div class="time-item">
+                                <span class="industry">Logistics</span>
+                                <span class="time-weeks">4 weeks</span>
+                            </div>
+                            <div class="time-item">
+                                <span class="industry">Manufacturing</span>
+                                <span class="time-weeks">5 weeks</span>
+                            </div>
+                            <div class="time-item">
+                                <span class="industry">Cybersecurity</span>
+                                <span class="time-weeks">6 weeks</span>
+                            </div>
+                            <div class="time-item">
+                                <span class="industry">Legal</span>
+                                <span class="time-weeks">12 weeks</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section id="impact" class="impact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Global Impact Metrics</h2>
+                <p>Comprehensive ROI analysis and success stories across all industries</p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">🌍</div>
+                    <h3>Global Transformation</h3>
+                    <div class="impact-stats">
+                        <div class="impact-stat">
+                            <span class="stat-number">74.7M</span>
+                            <span class="stat-label">Total Workforce Affected</span>
+                        </div>
+                        <div class="impact-stat">
+                            <span class="stat-number">3,092%</span>
+                            <span class="stat-label">Average ROI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-icon">⚡</div>
+                    <h3>Automation Efficiency</h3>
+                    <div class="impact-stats">
+                        <div class="impact-stat">
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Average Training Time Reduction</span>
+                        </div>
+                        <div class="impact-stat">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">Cross-Industry Placement Rate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-icon">📈</div>
+                    <h3>Economic Impact</h3>
+                    <div class="impact-stats">
+                        <div class="impact-stat">
+                            <span class="stat-number">$2.8T</span>
+                            <span class="stat-label">Estimated Economic Value</span>
+                        </div>
+                        <div class="impact-stat">
+                            <span class="stat-number">60%</span>
+                            <span class="stat-label">Cost Reduction vs Traditional</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="roi-simulator">
+                <h3>Universal ROI Simulator</h3>
+                <div class="simulator-controls">
+                    <div class="control-group">
+                        <label class="form-label">Select Industry</label>
+                        <select class="form-control" id="roiIndustry">
+                            <option value="cybersecurity">Cybersecurity</option>
+                            <option value="healthcare">Healthcare</option>
+                            <option value="manufacturing">Manufacturing</option>
+                            <option value="finance">Finance</option>
+                            <option value="retail">Retail</option>
+                            <option value="education">Education</option>
+                            <option value="logistics">Logistics</option>
+                            <option value="legal">Legal</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label">Number of Employees</label>
+                        <input type="number" class="form-control" id="employeeCount" value="100" min="1">
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label">Training Budget</label>
+                        <input type="number" class="form-control" id="trainingBudget" value="250000" min="1">
+                    </div>
+                    <button class="btn btn--primary" id="analyzeSkillsBtn">Calculate ROI</button>
+                </div>
+
+                <div class="roi-results" id="universalRoiResults">
+                    <div class="roi-item">
+                        <span class="roi-label">Traditional Cost:</span>
+                        <span class="roi-value" id="traditionalCost">$250,000</span>
+                    </div>
+                    <div class="roi-item">
+                        <span class="roi-label">WorkforceTransformer Cost:</span>
+                        <span class="roi-value" id="transformerCost">$100,000</span>
+                    </div>
+                    <div class="roi-item">
+                        <span class="roi-label">ROI Percentage:</span>
+                        <span class="roi-value" id="roiPercentage">2,775%</span>
+                    </div>
+                    <div class="roi-item total">
+                        <span class="roi-label">Total Savings:</span>
+                        <span class="roi-value" id="totalSavings">$150,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-stories">
+                <h3>Cross-Industry Success Stories</h3>
+                <div class="stories-grid">
+                    <div class="story-card">
+                        <div class="story-avatar">👤</div>
+                        <div class="story-content">
+                            <h4>Maria Rodriguez</h4>
+                            <p class="story-transition">Retail Manager → AI Ethics Specialist</p>
+                            <p class="story-quote">"WorkforceTransformer Universal helped me transition from retail
+                                management to AI ethics consulting. The cross-industry skills mapping was incredible - I
+                                discovered transferable leadership and process optimization skills I never knew were
+                                valuable in tech!"</p>
+                            <div class="story-metrics">
+                                <span class="metric">Training Time: 8 weeks</span>
+                                <span class="metric">Salary Increase: +75%</span>
+                                <span class="metric">Industry Transition: Retail → Tech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <div class="story-avatar">👤</div>
+                        <div class="story-content">
+                            <h4>James Chen</h4>
+                            <p class="story-transition">Manufacturing Technician → Healthcare AI Analyst</p>
+                            <p class="story-quote">"The platform identified how my precision work in manufacturing
+                                translated perfectly to medical data analysis. Now I'm developing AI solutions for
+                                diagnostic imaging - a career I never imagined possible!"</p>
+                            <div class="story-metrics">
+                                <span class="metric">Training Time: 12 weeks</span>
+                                <span class="metric">Salary Increase: +90%</span>
+                                <span class="metric">Industry Transition: Manufacturing → Healthcare</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🌍 WorkforceTransformer Universal</h3>
+                    <p>Revolutionizing workforce development across all industries through AI-powered transformation</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Platform</h4>
+                        <a href="#hero">Home</a>
+                        <a href="#industries">Industries</a>
+                        <a href="#assessment">Assessment</a>
+                        <a href="#training">Training</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Industries</h4>
+                        <a href="#" onclick="selectIndustry('cybersecurity')">Cybersecurity</a>
+                        <a href="#" onclick="selectIndustry('healthcare')">Healthcare</a>
+                        <a href="#" onclick="selectIndustry('manufacturing')">Manufacturing</a>
+                        <a href="#" onclick="selectIndustry('finance')">Finance</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 WorkforceTransformer Universal. All rights reserved. | Advanced Hackathon Solution</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="smart_ai_assessment.js?v=2"></script>
+    <script src="roi_calculator.js"></script>
+    <script src="frontend_interactions.js"></script>
+</body>
+</body>
+
+</html>
